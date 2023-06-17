@@ -1,0 +1,141 @@
+* {
+  font-family: Georgia, serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, gray, black);
+  color: white;
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+  gap: 0.75rem;
+}
+
+.btn {
+  background: red;
+  border: 1px solid black;
+  color: black;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: yellowgreen;
+}
+
+.btn.btn-danger {
+  background: white;
+  border: 2px solid red;
+  color: red;
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:focus-visible {
+  background: black;
+}
+
+.new-item-form input {
+  outline: none;
+  border: 1px solid black;
+  background: white;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  color: black;
+}
+
+.new-item-form input:focus {
+  border: 1px solid black;
+}
+
+.header {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  list-style: none;
+}
+
+.list li:has(input:checked) label {
+  color: black;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.list li label {
+  display: flex;
+  gap: 0.25rem;
+  cursor: pointer;
+  align-items: center;
+}
+
+.list li:has(input:focus-visible) label {
+  outline: 1px solid red;
+}
+
+.list li input {
+  outline: none;
+  width: 0;
+  height: 0;
+  appearance: none;
+  pointer-events: none;
+  position: absolute;
+}
+
+.list li label::before {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: white;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list li label:hover::before {
+  background: black;
+}
+
+.list li:has(input:checked) label::before {
+  content: "✔";
+  background: black;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.list li:has(input:checked) label:hover::before {
+  background: red;
+}
